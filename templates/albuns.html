@@ -9,11 +9,11 @@
     <h1>Lista de Álbuns</h1>
     {% if albuns %}
         <ul>
-            {% for album in albuns %}
-                <li>{{ albuns['name'],['teste'] }} 
-                    {{ album['album_type']}}
-                    
+            {% for album in albuns['items'] %}
+                <li>{{ album['name'] }}  
+                    <img src="{{ album['images'][0]['url'] }}" alt="Imagem do Álbum" height="{{ album['images'][0]['height'] }}" width="{{ album['images'][0]['width'] }}">
                 </li>
+
             {% endfor %}
         </ul>
     {% else %}

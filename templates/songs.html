@@ -6,12 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> TOP 5 TRACKS </h1>
-    <ul>
-        {% for track in tracks %}
-            <li> {{ track['album'],['teste'] }} 
-            </li>
-        {% endfor %}
-    </ul>
+    <h1> MUSICAS DO ALBUM </h1>
+    {% for track in tracks['items'] %}
+        <li>
+            <strong>Nome da Faixa:</strong> {{ track['name'] }}
+            <br>
+            <strong>Artistas:</strong>
+            <strong>Duração:</strong> {{ track['duration_ms'] / 1000 }} segundos
+        </li>
+    {% endfor %}
 </body>
 </html>

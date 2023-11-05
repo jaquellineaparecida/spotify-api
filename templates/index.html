@@ -4,16 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> FIAPfy </title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        li {
+            display: flex;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
     <h1> LISTA DE ARTISTAS </h1>
-    <ul>
-        {% for artist in artists['artists'] %}
-            <li> {{ artist['name'] }} 
-                - Seguidores: {{ artist['followers']['total'] }}
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <ul>
+            {% for artist in artists['artists'] %}
+                <li> 
+                    <img src="{{ artist['images'][0]['url'] }}" alt="Imagem do Álbum" height="150" width="150">
+                    <h1> {{ artist['name'] }}  </h1>
+                    <h1> Seguidores: {{ artist['followers']['total'] }} </h1> 
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 
 
